@@ -1,0 +1,188 @@
+/* center the app card */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* card look & feel */
+.app-card {
+  width: 100%;
+  max-width: 920px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.08);
+  padding: 22px;
+}
+
+/* heading */
+.app-title {
+  margin: 0;
+  color: #cc2e7b;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+/* consistent control sizing */
+button,
+input,
+textarea,
+label.input-like {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+button,
+input {
+  height: var(--control-h);
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  outline: none;
+  background: #fff;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #f3a1c5;
+  box-shadow: 0 0 0 3px rgba(243, 161, 197, 0.3);
+}
+
+button {
+  border-radius: var(--radius);
+  border: 1px solid #e8e8e8;
+  background: #f6f7f8;
+  color: #222;
+  padding: 0 14px;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease, transform .02s ease;
+}
+button:hover { background: #eef0f2; }
+button:active { transform: translateY(1px); }
+
+button.primary {
+  background: #ef6aa6;
+  color: #fff;
+  border-color: #ef6aa6;
+}
+button.primary:hover { background: #e65897; }
+
+button.danger {
+  background: #fff5f5;
+  color: #b4002a;
+  border-color: #ffd6de;
+}
+button.danger:hover { background: #ffecee; }
+
+/* chips (for filters) */
+.chip {
+  height: var(--control-h);
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 999px;
+  background: #fff;
+}
+
+/* separators */
+.hr {
+  height: 1px;
+  background: #eee;
+  margin: 16px 0;
+}
+
+/* playlist items */
+.item {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  overflow: hidden; /* ensures iframe corners clip */
+  background: #fff;
+}
+
+.item-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: #fafafa;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.item-title {
+  flex: 1;
+  height: var(--control-h);
+  padding: 8px 10px;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+}
+
+/* iframe wrapper: true 16:9 with rounded corners */
+.embed-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  background: #f6f6f6;
+}
+.embed-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* notes block */
+.item-notes {
+  padding: 14px;
+  background: #fafafa;
+  border-top: 1px solid #f1f1f1;
+}
+
+.item-notes label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.item-notes textarea {
+  width: 100%;
+  min-height: 70px;   /* compact but editable */
+  max-height: 150px;  /* prevents it from dominating the card */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  resize: vertical;
+  background: #fff;
+}
+
+.item-notes textarea:focus {
+  border-color: #f3a1c5;
+  box-shadow: 0 0 0 3px rgba(243, 161, 197, 0.3);
+}
+
+.muted {
+  color: #6a6a6a;
+  font-size: 12px;
+  margin-top: 6px;
+  user-select: none;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
