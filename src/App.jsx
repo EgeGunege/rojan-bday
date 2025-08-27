@@ -1,10 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
-useEffect(() => {
-  document.title = "Rojan’s Birthday Playlist 💖";
-}, []);
-
 /* ---------- helpers ---------- */
 const YT_REGEXES = [
   /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/i,
@@ -71,6 +67,11 @@ export default function App() {
   const [note, setNote] = useState("");
   const [name, setName] = useState("");
   const [filter, setFilter] = useState("all");
+
+  // ✅ put useEffect INSIDE the component
+  useEffect(() => {
+    document.title = "Rojan’s Birthday Playlist 💖";
+  }, []);
 
   useEffect(() => {
     saveItems(items);
